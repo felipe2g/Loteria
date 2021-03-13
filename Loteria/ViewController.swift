@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateGame()
         // Do any additional setup after loading the view.
     }
     
@@ -58,6 +59,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func generateGame() {
+        switch scGameType.selectedSegmentIndex {
+        case 0:
+            showNumbers(for: .megasena)
+        default:
+            showNumbers(for: .quina)
+        }
     }
     
 }

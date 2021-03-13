@@ -38,6 +38,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func showNumbers(for type: GameType){
+        lbGameType.text = type.rawValue
+        var game: [Int] = []
+        
+        switch type {
+        case .megasena:
+            game = 6>-<60
+            balls.last!.isHidden = false
+        case .quina:
+            game = 5>-<80
+            balls.last!.isHidden = true
+        }
+        
+        for (index, game) in game.enumerated() {
+            balls[index].setTitle("\(game)", for: .normal)
+        }
+    }
 
     @IBAction func generateGame() {
     }
